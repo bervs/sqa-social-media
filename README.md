@@ -48,3 +48,4 @@ NEXT_PUBLIC_BASE_URL=http://localhost:8080
 - [README do Frontend](client/README.md)
 - [DummyJSON API Docs](https://dummyjson.com/docs)
 "# trabalho-qa" 
+"# trabalho-qa" 
