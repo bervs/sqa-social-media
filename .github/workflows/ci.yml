@@ -44,11 +44,8 @@ jobs:
       - name: Iniciar API em background
         run: cd api && ./mvnw spring-boot:run -DskipTests > /tmp/api.log 2>&1 &
 
-      - name: Build do frontend
-        run: cd client && npm run build
-
       - name: Iniciar frontend em background
-        run: cd client && npm start > /tmp/frontend.log 2>&1 &
+        run: cd client && npm run dev > /tmp/frontend.log 2>&1 &
 
       - name: Aguardar API ficar disponivel
         run: |
