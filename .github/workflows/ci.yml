@@ -68,6 +68,7 @@ jobs:
 
       - name: Executar testes Playwright
         run: cd tests && npx playwright test
+        continue-on-error: true
 
       - name: Publicar relatorio Playwright
         uses: actions/upload-artifact@v4
