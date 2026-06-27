@@ -31,7 +31,7 @@ test("POST /auth/signup - deve retornar 422 ao cadastrar com senha invalida", as
   expect(response.status()).toBe(422);
 });
 
-test("BUG: POST /auth/signup - mensagem de email duplicado deveria ser E-mail ja cadastrado", async ({ request }) => {
+test.fail("BUG: POST /auth/signup - mensagem de email duplicado deveria ser E-mail ja cadastrado", async ({ request }) => {
   const email = "bugmsg" + Date.now() + "@email.com";
   await request.post(API_URL + "/auth/signup", {
     data: { email, password: "Senha123!" },

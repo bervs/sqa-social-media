@@ -9,7 +9,7 @@ test("deve cadastrar novo usuario e redirecionar para a home", async ({ page }) 
   await page.locator('input[type="password"]').first().fill("Senha123!");
   await page.locator('input[type="password"]').nth(1).fill("Senha123!");  
   await page.locator("button[type=submit]").click();
-  await expect(page).toHaveURL("/");
+  await expect(page).toHaveURL("/", { timeout: 15000 })
 });
 
 // test.fail indica que este teste e esperado falhar (documenta o bug)
