@@ -6,8 +6,8 @@ test("deve cadastrar novo usuario e redirecionar para a home", async ({ page }) 
   const uniqueEmail = "usuario" + Date.now() + "@email.com";
   await page.goto("/signup");
   await page.getByPlaceholder("seu@email.com").fill(uniqueEmail);
-  await page.getByPlaceholder("••••••••").first().fill("Senha123!");
-  await page.getByPlaceholder("••••••••").nth(1).fill("Senha123!");
+  await page.locator('input[type="password"]').first().fill("Senha123!");
+  await page.locator('input[type="password"]').nth(1).fill("Senha123!");  
   await page.locator("button[type=submit]").click();
   await expect(page).toHaveURL("/");
 });
