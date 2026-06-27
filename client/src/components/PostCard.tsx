@@ -77,6 +77,23 @@ export default function PostCard({
         {post.body}
       </p>
 
+      {/* NOVA FUNCIONALIDADE: exibir curtidas e descurtidas */}
+      {post.reactions && (
+        <div
+          style={{
+            display: "flex",
+            gap: "1.5rem",
+            marginBottom: "1rem",
+            fontSize: "0.9rem",
+            color: "var(--foreground)",
+            opacity: 0.8,
+          }}
+        >
+          <span>👍 {post.reactions.likes} curtidas</span>
+          <span>👎 {post.reactions.dislikes} descurtidas</span>
+        </div>
+      )}
+
       <div
         style={{
           display: "flex",
@@ -103,9 +120,7 @@ export default function PostCard({
             opacity: isLoading ? 0.7 : 1,
           }}
           onMouseOver={(e) => {
-            if (!isLoading) {
-              e.currentTarget.style.transform = "scale(1.05)";
-            }
+            if (!isLoading) e.currentTarget.style.transform = "scale(1.05)";
           }}
           onMouseOut={(e) => {
             e.currentTarget.style.transform = "scale(1)";
